@@ -1,0 +1,29 @@
+title POST Request SPA
+
+Browser -> Server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over Browser 
+Payload:
+body: {
+    content: 'First Task spa',
+    date: new Date()
+}
+end note
+
+note over Server  
+Server add new note 
+end note
+
+note over Browser 
+browser executes js-code
+that request JSON data from server
+end note
+
+Browser -> Server  : HTTP GET https://studies.cs.helsinki.fi/exampleapp/data.json
+Server  -> Browser : [{content:'First Note', date:'...'},...,{...}]
+
+note over Browser 
+browser executes the event handler
+that render notes to display
+without reload the page
+end note
